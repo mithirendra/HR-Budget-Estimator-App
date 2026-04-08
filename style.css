@@ -1,0 +1,711 @@
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body */
+body {
+    font-family: sans-serif;  /* use the browser's default sans-serif font */
+    background: #fffbf8;      /* very light blue background for the whole page */
+    color: #111;              /* near-black text color for everything */
+}
+
+/* App container — sidebar + main side by side */
+.app {
+    display: flex;        /* sidebar and main panel sit side by side */
+    height: 100vh;        /* 100vh = 100% of the viewport height — fills the full screen */
+    overflow: hidden;     /* prevents the outer container from scrolling */
+}
+/* SIDEBAR */
+.sidebar {
+    width: 210px;         /* fixed width */
+    min-width: 210px;     /* never shrink below 210px even if screen is small */
+    background: #ffece1;  /* very light grey background */
+    border-right: 1px solid #e0e0e0;  /* thin grey line separating sidebar from main */
+    display: flex;        /* stack children vertically */
+    flex-direction: column;
+    overflow: hidden;     /* prevent sidebar itself from overflowing */
+}
+
+.sidebar-header {
+    padding: 1rem;        /* space inside the header */
+    border-bottom: 1px solid #e0e0e0;  /* line below the title */
+    flex-shrink: 0;       /* don't shrink this even if sidebar runs out of space */
+}
+
+.sidebar-header h2 {
+    font-size: 15.5px;    /* small title */
+    font-weight: 700;     /* bold */
+    color: #1E3A5F;
+    line-height: 1.4;     /* spacing between lines if title wraps */
+}
+
+.sidebar-nav {
+    flex: 1;              /* takes up all remaining space between header and footer */
+    overflow-y: auto;     /* scrolls vertically if nav items overflow */
+}
+
+.sidebar-footer {
+    flex-shrink: 0;       /* always visible, never pushed out */
+    padding: 0.75rem 1rem;
+    border-top: 1px solid #e0e0e0;  /* line above the footer */
+    display: flex;
+    flex-direction: column;  /* stack buttons vertically */
+    gap: 6px;             /* space between buttons */
+}
+
+/* Sidebar Sections — group labels like "Headcount", "HR Functions", "Overview" */
+.sidebar-section {                  
+    padding: 0.6rem 1rem 0.3rem;   /* top, left/right, bottom spacing */
+    font-size: 10px;                /* small label text */
+    font-weight: 600;               /* semibold */
+    color: #989898;                    /* muted grey — less prominent than nav buttons */
+    text-transform: uppercase;      /* forces text to ALL CAPS */
+    letter-spacing: 0.6px;         /* spreads letters apart — common for uppercase labels */
+    margin-top: 0.5rem;            /* adds space above each section group */
+}
+
+/* NAV Buttons — each clickable item in the sidebar */
+.nav-btn {
+    display: block;                 /* makes button a block element — fills full width */
+    width: 100%;                    /* stretches across the full sidebar width */
+    text-align: left;               /* aligns text to the left — buttons default to center */
+    padding: 7px 1rem;             /* vertical and horizontal spacing inside button */
+    font-size: 12.5px;             /* slightly smaller than body text */
+    color: #555;                    /* medium grey — not too dark, not too light */
+    background: none;              /* transparent background by default */
+    border: none;                   /* removes default browser button border */
+    border-left: 2px solid transparent; /* invisible left border — becomes visible when active */
+    cursor: pointer;                /* shows hand cursor on hover — signals it is clickable */
+    font-family: sans-serif;       /* overrides browser default button font */
+}
+
+/* NAV BUTTON HOVER STATE — when mouse moves over a button */
+.nav-btn:hover {
+    background: #ffd9c0;             /* white background appears on hover */
+    color: #111;                   /* text darkens on hover — gives feedback to user */
+}
+
+/* NAV BUTTON ACTIVE STATE — the currently selected page */
+.nav-btn.active {
+    background: #fff8f5;             /* white background — stands out from grey sidebar */
+    color: #1E3A5F;                /* navy blue text — matches brand color */
+    border-left-color: #1E3A5F;   /* navy blue left border — visual indicator of active page */
+    font-weight: 600;              /* bold text — more prominent than inactive buttons */
+}
+
+/* SIDEBAR FOOTER LABEL — small "Excel" label above the download/upload buttons */
+.sidebar-footer-label {
+    font-size: 10px;               /* very small */
+    font-weight: 600;              /* semibold */
+    color: #aaa;                   /* muted grey — same style as sidebar sections */
+    text-transform: uppercase;     /* ALL CAPS */
+    letter-spacing: 0.6px;        /* spread letters apart */
+}
+
+/* DOWNLOAD BUTTON — filled navy blue button */
+.btn-download {
+    padding: 7px 10px;             /* space inside button */
+    font-size: 11.5px;
+    font-weight: 600;
+    background: orange;           /* navy blue fill */
+    color: #1E3A5F;                  /* white text on dark background */
+    border: none;                  /* no border needed — background already defines the shape */
+    border-radius: 6px;            /* slightly rounded corners */
+    cursor: pointer;               /* hand cursor */
+    font-family: sans-serif;       /* override default button font */
+    text-align: center;            /* center the text and icon */
+}
+
+/* DOWNLOAD BUTTON HOVER — slightly darker on hover for feedback */
+.btn-download:hover {
+    background: #162d4a;           /* darker navy — signals the button is being hovered */
+    color: white;
+}
+
+/* UPLOAD BUTTON — outlined button, white background */
+.btn-upload {
+    padding: 7px 10px;
+    font-size: 11.5px;
+    font-weight: 600;
+    background: white;             /* white fill — contrasts with download button */
+    color: #1E3A5F;                /* navy blue text */
+    border: 1.5px solid #1E3A5F;  /* navy blue border — defines the button shape */
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+/* UPLOAD BUTTON HOVER — very light blue tint on hover */
+.btn-upload:hover {
+    background: #EFF6FF;           /* pale blue — subtle hover feedback */
+}
+
+/* MAIN PANEL */
+.main {
+    flex: 1;              /* takes all remaining width after the sidebar */
+    overflow-y: auto;     /* main panel scrolls, not the whole page */
+    padding: 1.25rem 1.5rem;  /* breathing room inside */
+    background: #fffbf8;
+    display: flex;                 /* stack pages and footer vertically */
+    flex-direction: column;        /* column layout */
+}
+
+/* LANDING PAGE */
+.landing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;                       /* fills all available height */
+    width: 100%;                   /* fills full width */
+}
+
+.landing-content {
+    max-width: 540px;              /* limits width for readability */
+    text-align: center;
+    margin: 0 auto;                /* centers the block horizontally */
+}
+
+.landing-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    color: #1E3A5F;
+    background: #ffece1;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+}
+
+.landing-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1E3A5F;
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+}
+
+.landing-tagline {
+    font-size: 15px;
+    font-weight: 300;
+    color: #555;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.landing-desc {
+    font-size: 13px;
+    color: #888;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.landing-btn {
+    padding: 12px 28px;
+    font-size: 14px;
+    font-weight: 600;
+    background: orange;
+    color: #1E3A5F;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: sans-serif;
+    transition: background 0.15s;  /* smooth hover transition */
+}
+
+.landing-btn:hover {
+    background: #162d4a;
+    color: white;           /* slightly darker on hover */
+}
+
+/* PAGES — all pages hidden by default */
+.page {
+    display: none;                 /* hidden unless active class is added */
+}
+
+/* ACTIVE PAGE — only one page visible at a time */
+.page.active {
+    display: block;
+    padding-bottom: 2rem;          /* breathing room above footer */
+}
+
+/* LANDING PAGE ACTIVE — needs flex to center content */
+#page-landing.active {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: calc(100vh - 60px);
+}
+
+/* PAGE HEADER */
+.page-header {
+    margin-bottom: 1.25rem;
+}
+
+.page-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    color: #1E3A5F;
+    background: orange;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.page-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 3px;
+}
+
+.page-sub {
+    font-size: 11px;
+    color: #999;
+}
+
+/* SECTIONS */
+.sec {
+    margin-bottom: 1rem;
+}
+
+.sec-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: orange;
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ddeeff;
+    margin-bottom: 8px;
+}
+
+.sec-label-2 {
+    font-size: 10px;
+    font-weight: 700;
+    color: #1E3A5F;
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ddeeff;
+    margin-bottom: 8px;
+}
+
+/* INPUT ROWS */
+.row2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;   /* 2 equal columns */
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.row3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;   /* 3 equal columns */
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+/* FIELD — label + input pair */
+.field {
+    display: flex;
+    flex-direction: column;   /* label on top, input below */
+    gap: 3px;
+}
+
+.field label {
+    font-size: 10.5px;
+    color: #666;
+}
+
+.field input {
+    padding: 6px 8px;
+    font-size: 12.5px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: white;
+    color: #111;
+    font-family: sans-serif;
+}
+
+.field input:focus {
+    outline: none;              /* removes default blue outline */
+    border-color: #3B82F6;     /* blue border when focused */
+}
+
+/* READ ONLY FIELDS — calculated, not editable */
+.field input[readonly] {
+    background: #f8f9fa;           /* light grey background */
+    color: #888;                   /* muted text */
+    cursor: not-allowed;           /* shows a no-entry cursor on hover */
+}
+
+/* DIVIDER */
+hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 0.9rem 0;
+}
+
+/* HC KPI CARDS */
+.hc-kpis {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);   /* 4 equal columns */
+    gap: 8px;
+    margin-bottom: 1rem;
+}
+
+.hc-kpi {
+    background: #ffece1;
+    border-radius: 8px;
+    padding: 10px 12px;
+}
+
+.hc-kpi-lbl {
+    font-size: 10px;
+    color: #666;
+    margin-bottom: 3px;
+}
+
+.hc-kpi-val {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1E3A5F;
+}
+
+.hc-kpi-sub {
+    font-size: 10px;
+    color: #aaa;
+    margin-top: 2px;
+}
+
+/* FOR TALENT ACQUISITION */
+/* BREAKDOWN CARDS */
+.breakdown-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);   /* 3 cards per row */
+    gap: 7px;
+    margin-bottom: 1rem;
+}
+
+.bcard {
+    background: #ffece1;
+    border-radius: 6px;
+    padding: 7px 10px;
+}
+
+.bcard-lbl {
+    font-size: 10px;
+    color: #999;
+    margin-bottom: 2px;
+}
+
+.bcard-val {
+    font-size: 12px;
+    font-weight: 600;
+    color: #222;
+}
+
+/* COMPONENT CONTRIBUTION CHART */
+.comp-chart {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 1rem;
+}
+
+.comp-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.comp-name {
+    width: 170px;
+    font-size: 11px;
+    color: #555;
+    flex-shrink: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;   /* shows ... if text too long */
+}
+
+.comp-track {
+    flex: 1;
+    background: #f0f0f0;
+    border-radius: 3px;
+    height: 9px;
+    overflow: hidden;
+}
+
+.comp-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.3s;    /* smooth animation when value changes */
+}
+
+.comp-pct {
+    width: 32px;
+    font-size: 10px;
+    color: #aaa;
+    text-align: right;
+}
+
+/* 5 YEAR PROJECTION BAR CHART */
+.proj-bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    height: 200px;
+    margin-bottom: 1rem;
+}
+
+.proj-bar-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    height: 100%;
+    justify-content: flex-end;
+}
+
+.proj-bar-val {
+    font-size: 10px;
+    font-weight: 600;
+    color: #1E3A5F;
+}
+
+.proj-bar {
+    width: 60%;
+    border-radius: 4px 4px 0 0;
+}
+
+.proj-bar-lbl {
+    font-size: 11px;
+    color: #666;
+    font-weight: 500;
+}
+
+/* TOTAL RESULT */
+.total-result {
+    background: #FFece1;
+    border-radius: 8px;
+    padding: 11px 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.total-lbl {
+    font-size: 12px;
+    color: #666;
+}
+
+.total-val {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1E3A5F;
+}
+
+
+/* DASHBOARD KPI CARDS */
+.dash-kpis {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);   /* 4 cards in a row */
+    gap: 8px;
+    margin-bottom: 1.25rem;
+}
+
+.dash-kpi {
+    background: #FFECE1;
+    border-radius: 8px;
+    padding: 10px 12px;
+}
+
+.dash-kpi-lbl {
+    font-size: 10px;
+    color: #666;
+    margin-bottom: 3px;
+}
+
+.dash-kpi-val {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1E3A5F;
+}
+
+/* DONUT CHART WRAPPER */
+.dash-donut-wrap {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* DONUT LEGEND */
+.dash-legend {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.dash-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    color: #555;
+}
+
+.dash-legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* SUMMARY CONTROLS */
+.summary-controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.summary-controls label {
+    font-size: 11.5px;
+    color: #666;
+}
+
+.summary-controls select {
+    padding: 5px 8px;
+    font-size: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: white;
+    color: #111;
+    font-family: sans-serif;
+}
+
+/* SUMMARY TABLE */
+.sum-table-wrap {
+    overflow-x: auto;
+    margin-bottom: 1rem;
+}
+
+.sum-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11.5px;
+}
+
+.sum-table th {
+    text-align: left;
+    font-size: 10px;
+    font-weight: 600;
+    color: #aaa;
+    padding: 6px 8px;
+    border-bottom: 1px solid #eee;
+    background: #fafafa;
+    white-space: nowrap;
+}
+
+.sum-table td {
+    padding: 8px 8px;
+    border-bottom: 1px solid #f5f5f5;
+    color: #222;
+    white-space: nowrap;
+}
+
+.sum-table .total-row td {
+    font-weight: 700;
+    font-size: 12.5px;
+    color: #1E3A5F;
+    background: #FFECE1;
+    border-top: 1.5px solid #ccc;
+    border-bottom: none;
+}
+
+.sum-table .hc-row td {
+    color: #666;
+    background: #fafafa;
+    font-size: 11px;
+}
+
+.sum-table .cpe-row td {
+    font-weight: 700;
+    color: #059669;
+    background: #f0fdf4;
+}
+
+/* SUMMARY BOTTOM CARDS */
+.sum-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 1rem;
+}
+
+.sum-card {
+    background: #FFECE1;
+    border-radius: 8px;
+    padding: 12px 14px;
+}
+
+.sum-card.warn {
+    background: #FFF7ED;
+}
+
+.sum-card-lbl {
+    font-size: 11px;
+    color: #666;
+    margin-bottom: 4px;
+}
+
+.sum-card-val {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1E3A5F;
+}
+
+.sum-card.warn .sum-card-val {
+    color: #92400E;
+    font-size: 14px;
+}
+
+.sum-card-note {
+    font-size: 10px;
+    margin-top: 4px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 1.5rem 1rem 1rem;
+    font-size: 11px;
+    color: #aaa;
+    margin-top: 2rem;              /* space above footer */
+    border-top: 1px solid #e0e0e0;
+}
