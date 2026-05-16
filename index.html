@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HR Budget Estimator</title>
+    <title>HR Budget Estimator - Demo Version | Mitma Consulting</title>
     <link rel="stylesheet" href="style.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -16,9 +16,12 @@
         <!-- SIDEBAR -->
         <div class="sidebar">
             <div class="sidebar-header">
-                <h2>HR Budget Estimator</h2>
+                <h2>HR Budget Estimator (Demo Version)</h2>
                 <p class="sidebar-by">By Mitma Consulting</p>
-                <img src="images/mitma_logo.png" class="sidebar-logo" alt="Mitma Consulting"/>
+                <a href="https://mitmaconsulting.framer.ai" target="_blank">
+                    <img src="images/mitma_logo.png" class="sidebar-logo" alt="Mitma Consulting"/>
+                </a>
+
             </div>
             <div class="sidebar-nav">
                 <!-- navigation buttons go here -->
@@ -59,11 +62,12 @@
             <div class="page active" id="page-landing">
                 <div class="landing">
                     <div class="landing-content">
-                        <div class="landing-tag">HR Planning Tool</div>
-                            <h1 class="landing-title">HR Budget Estimator</h1>
-                            <p class="landing-tagline">Plan, project and present your HR Budget with confidence</p>
-                            <p class="landing-desc">A structured budgeting tool for HR leaders to estimate costs across all HR Functions, from Talent Acquisition to Payroll, shwoing year on year projections, component breakdowns, plus a consolidated CHRO summary view.</p>
-                            <button class="landing-btn" id="btn-get-started">Get Started</button>
+                        <div class="landing-tag">Demo Version</div>
+                        <h1 class="landing-title">HR Budget Estimator</h1>
+                        <p class="landing-tagline">Plan, project and present your HR Budget with confidence</p>
+                        <p class="landing-desc">A structured budgeting tool for HR leaders to estimate costs across all HR Functions, from Talent Acquisition to Payroll, showing year on year projections, component breakdowns, plus a consolidated CHRO summary view.</p>
+                        <button class="landing-btn" id="btn-get-started">Get Started</button>
+                        <p class="landing-full-notice">Full Version available — <a href="https://mitmaconsulting.framer.ai/contact" target="_blank">Contact Mitma Consulting</a></p>
                     </div>
                 </div>
             </div>
@@ -713,127 +717,20 @@
                     <p class="page-sub">Estimate total employee compensation including Malaysian statutory contributions.</p>
                 </div>
 
-                <!-- Headcount & Salaries -->
-                <div class="sec">
-                    <div class="sec-label">HEADCOUNT & SALARIES</div>
-                    <div class="row2">
-                        <div class="field">
-                            <label>Total Headcount</label>
-                            <input type="number" id="pay-headcount" value="100"/>
-                        </div>
-                        <div class="field">
-                            <label>Average Monthly Salary (RM)</label>
-                            <input type="number" id="pay-salary" value="5000"/>
-                        </div>
+                <!-- Demo Notice -->
+                <div class="demo-notice">
+                    <div class="demo-notice-icon">🔒</div>
+                    <h3 class="demo-notice-title">Full Version Only</h3>
+                    <p class="demo-notice-text">This page is only available in the Full Version of HR Budget Estimator.</p>
+                    <p class="demo-notice-contact">Contact Mitma Consulting to get access to the Full Version.</p>
+                    <a href="https://mitmaconsulting.framer.ai/contact" target="_blank">
+                        <img src="images/mitma_logo.png" class="demo-notice-logo" alt="Mitma Consulting"/>
+                    </a>
+                    <div class="demo-notice-buttons">
+                        <a href="https://mitmaconsulting.framer.ai/contact" target="_blank" class="demo-notice-btn">Contact Mitma Consulting →</a>
+                        <a href="https://www.linkedin.com/in/mithirendra-maniam/" target="_blank" class="demo-notice-btn-linkedin">Connect on LinkedIn →</a>
                     </div>
-                    <div class="row2">
-                        <div class="field">
-                            <label>Number of HR Staff</label>
-                            <input type="number" id="pay-hr-num" value="5"/>
-                        </div>
-                        <div class="field">
-                            <label>Average HR Staff Salary (RM/month)</label>
-                            <input type="number" id="pay-hr-salary" value="6000"/>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Statutory Contributions -->
-                <div class="sec">
-                    <div class="sec-label">STATUTORY CONTRIBUTIONS (Malaysian)</div>
-                    <div class="row3">
-                        <div class="field">
-                            <label>EPF Employer Rate (%)</label>
-                            <input type="number" id="pay-epf" value="13"/>
-                        </div>
-                        <div class="field">
-                            <label>SOCSO (RM/employee/month)</label>
-                            <input type="number" id="pay-socso" value="50"/>
-                        </div>
-                        <div class="field">
-                            <label>EIS (RM/employee/month)</label>
-                            <input type="number" id="pay-eis" value="8"/>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Variable Pay -->
-                <div class="sec">
-                    <div class="sec-label">VARIABLE PAY</div>
-                    <div class="row2">
-                        <div class="field">
-                            <label>Overtime Budget (RM/year)</label>
-                            <input type="number" id="pay-overtime" value="50000"/>
-                        </div>
-                        <div class="field">
-                            <label>Allowances Budget (RM/year)</label>
-                            <input type="number" id="pay-allowances" value="120000"/>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Growth & Contingency -->
-                <div class="sec">
-                    <div class="sec-label">GROWTH & CONTINGENCY</div>
-                    <div class="row2">
-                        <div class="field">
-                            <label>Annual Growth Rate (%)</label>
-                            <input type="number" id="pay-growth" value="5"/>
-                        </div>
-                        <div class="field">
-                            <label>Contingency Buffer (%)</label>
-                            <input type="number" id="pay-contingency" value="5"/>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Breakdown Cards -->
-                <div class="sec">
-                    <div class="sec-label-2">BUDGET BREAKDOWN</div>
-                    <div class="breakdown-cards">
-                        <div class="bcard">
-                            <div class="bcard-lbl">Base Salaries</div>
-                            <div class="bcard-val" id="pay-c1">RM 0</div>
-                        </div>
-                        <div class="bcard">
-                            <div class="bcard-lbl">EPF (Employer)</div>
-                            <div class="bcard-val" id="pay-c2">RM 0</div>
-                        </div>
-                        <div class="bcard">
-                            <div class="bcard-lbl">SOCSO + EIS</div>
-                            <div class="bcard-val" id="pay-c3">RM 0</div>
-                        </div>
-                        <div class="bcard">
-                            <div class="bcard-lbl">HR Staff Salaries</div>
-                            <div class="bcard-val" id="pay-c4">RM 0</div>
-                        </div>
-                        <div class="bcard">
-                            <div class="bcard-lbl">Variable Pay</div>
-                            <div class="bcard-val" id="pay-c5">RM 0</div>
-                        </div>
-                        <div class="bcard">
-                            <div class="bcard-lbl">Contingency</div>
-                            <div class="bcard-val" id="pay-c6">RM 0</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Component Contribution Chart -->
-                <div class="sec">
-                    <div class="sec-label-2">COMPONENT CONTRIBUTION TO PAYROLL BUDGET</div>
-                    <div class="comp-chart" id="pay-comp-chart"></div>
-                </div>
-
-                <!-- 5 Year Projection Chart -->
-                <div class="sec">
-                    <div class="sec-label-2">5-YEAR BUDGET PROJECTION</div>
-                    <div class="proj-bars" id="pay-proj-chart"></div>
-                </div>
-
-                <!-- Total Budget -->
-                <div class="total-result">
-                    <div class="total-lbl"><b>TOTAL PAYROLL BUDGET (Year 1)</b></div>
-                    <div class="total-val" id="pay-total">RM 0</div>
                 </div>
 
             </div>
@@ -847,116 +744,20 @@
                     <h2 class="page-title">Rewards & Benefits</h2>
                     <p class="page-sub">Estimate bonus, medical, insurance and other employee benefits costs.</p>
                 </div>
-
-                <!-- Performance Bonus -->
-                <div class="sec">
-                    <div class="sec-label">PERFORMANCE BONUS</div>
-                    <div class="row2">
-                        <div class="field">
-                            <label>Total Headcount</label>
-                            <input type="number" id="rb-headcount" value="100"/>
-                        </div>
-                        <div class="field">
-                            <label>Average Annual Bonus per Employee (RM)</label>
-                            <input type="number" id="rb-bonus" value="5000"/>
-                        </div>
+                
+                <!-- Demo Notice -->
+                <div class="demo-notice">
+                    <div class="demo-notice-icon">🔒</div>
+                    <h3 class="demo-notice-title">Full Version Only</h3>
+                    <p class="demo-notice-text">This page is only available in the Full Version of HR Budget Estimator.</p>
+                    <p class="demo-notice-contact">Contact Mitma Consulting to get access to the Full Version.</p>
+                    <a href="https://mitmaconsulting.framer.ai/contact" target="_blank">
+                        <img src="images/mitma_logo.png" class="demo-notice-logo" alt="Mitma Consulting"/>
+                    </a>
+                    <div class="demo-notice-buttons">
+                        <a href="https://mitmaconsulting.framer.ai/contact" target="_blank" class="demo-notice-btn">Contact Mitma Consulting →</a>
+                        <a href="https://www.linkedin.com/in/mithirendra-maniam/" target="_blank" class="demo-notice-btn-linkedin">Connect on LinkedIn →</a>
                     </div>
-                </div>
-
-                <!-- Medical & Insurance -->
-                <div class="sec">
-                    <div class="sec-label">MEDICAL & INSURANCE</div>
-                    <div class="row2">
-                        <div class="field">
-                            <label>Medical Benefits per Employee (RM/year)</label>
-                            <input type="number" id="rb-medical" value="1200"/>
-                        </div>
-                        <div class="field">
-                            <label>Group Insurance per Employee (RM/year)</label>
-                            <input type="number" id="rb-insurance" value="800"/>
-                        </div>
-                    </div>
-                    <div class="row2">
-                        <div class="field">
-                            <label>Dental & Optical per Employee (RM/year)</label>
-                            <input type="number" id="rb-dental" value="400"/>
-                        </div>
-                        <div class="field">
-                            <label>Life Insurance per Employee (RM/year)</label>
-                            <input type="number" id="rb-life" value="600"/>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Other Benefits -->
-                <div class="sec">
-                    <div class="sec-label">OTHER BENEFITS</div>
-                    <div class="row2">
-                        <div class="field">
-                            <label>Flexible Benefits Budget (RM/year)</label>
-                            <input type="number" id="rb-flexible" value="30000"/>
-                        </div>
-                        <div class="field">
-                            <label>Staff Equity / ESOS Budget (RM/year)</label>
-                            <input type="number" id="rb-esos" value="0"/>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Growth & Contingency -->
-                <div class="sec">
-                    <div class="sec-label">GROWTH & CONTINGENCY</div>
-                    <div class="row2">
-                        <div class="field">
-                            <label>Annual Growth Rate (%)</label>
-                            <input type="number" id="rb-growth" value="5"/>
-                        </div>
-                        <div class="field">
-                            <label>Contingency Buffer (%)</label>
-                            <input type="number" id="rb-contingency" value="8"/>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Breakdown Cards -->
-                <div class="sec">
-                    <div class="sec-label-2">BUDGET BREAKDOWN</div>
-                    <div class="breakdown-cards">
-                        <div class="bcard">
-                            <div class="bcard-lbl">Performance Bonus</div>
-                            <div class="bcard-val" id="rb-c1">RM 0</div>
-                        </div>
-                        <div class="bcard">
-                            <div class="bcard-lbl">Medical & Insurance</div>
-                            <div class="bcard-val" id="rb-c2">RM 0</div>
-                        </div>
-                        <div class="bcard">
-                            <div class="bcard-lbl">Other Benefits</div>
-                            <div class="bcard-val" id="rb-c3">RM 0</div>
-                        </div>
-                        <div class="bcard">
-                            <div class="bcard-lbl">Contingency</div>
-                            <div class="bcard-val" id="rb-c4">RM 0</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Component Contribution Chart -->
-                <div class="sec">
-                    <div class="sec-label-2">COMPONENT CONTRIBUTION TO R&B BUDGET</div>
-                    <div class="comp-chart" id="rb-comp-chart"></div>
-                </div>
-
-                <!-- 5 Year Projection Chart -->
-                <div class="sec">
-                    <div class="sec-label-2">5-YEAR BUDGET PROJECTION</div>
-                    <div class="proj-bars" id="rb-proj-chart"></div>
-                </div>
-
-                <!-- Total Budget -->
-                <div class="total-result">
-                    <div class="total-lbl"><b>TOTAL R&B BUDGET (Year 1)</b></div>
-                    <div class="total-val" id="rb-total">RM 0</div>
                 </div>
 
             </div>
@@ -971,123 +772,20 @@
                     <p class="page-sub">Estimate workplace safety, wellness programmes and employee assistance costs.</p>
                 </div>
 
-                <!-- Workplace Safety -->
-                <div class="sec">
-                    <div class="sec-label">WORKPLACE SAFETY</div>
-                    <div class="row2">
-                        <div class="field">
-                            <label>Safety Training Budget (RM/year)</label>
-                            <input type="number" id="hs-safety-training" value="10000"/>
-                        </div>
-                        <div class="field">
-                            <label>Safety Equipment & Inspections (RM/year)</label>
-                            <input type="number" id="hs-safety-equip" value="8000"/>
-                        </div>
+                <!-- Demo Notice -->
+                <div class="demo-notice">
+                    <div class="demo-notice-icon">🔒</div>
+                    <h3 class="demo-notice-title">Full Version Only</h3>
+                    <p class="demo-notice-text">This page is only available in the Full Version of HR Budget Estimator.</p>
+                    <p class="demo-notice-contact">Contact Mitma Consulting to get access to the Full Version.</p>
+                    <a href="https://mitmaconsulting.framer.ai/contact" target="_blank">
+                        <img src="images/mitma_logo.png" class="demo-notice-logo" alt="Mitma Consulting"/>
+                    </a>
+                    <div class="demo-notice-buttons">
+                        <a href="https://mitmaconsulting.framer.ai/contact" target="_blank" class="demo-notice-btn">Contact Mitma Consulting →</a>
+                        <a href="https://www.linkedin.com/in/mithirendra-maniam/" target="_blank" class="demo-notice-btn-linkedin">Connect on LinkedIn →</a>
                     </div>
                 </div>
-
-                <!-- Wellness Programmes -->
-                <div class="sec">
-                    <div class="sec-label">WELLNESS PROGRAMMES</div>
-                    <div class="row2">
-                        <div class="field">
-                            <label>Total Headcount</label>
-                            <input type="number" id="hs-headcount" value="100"/>
-                        </div>
-                        <div class="field">
-                            <label>Wellness Budget per Employee (RM)</label>
-                            <input type="number" id="hs-wellness-per" value="200"/>
-                        </div>
-                    </div>
-                    <div class="row2">
-                        <div class="field">
-                            <label>Gym / Fitness Subsidy (RM/year)</label>
-                            <input type="number" id="hs-gym" value="12000"/>
-                        </div>
-                        <div class="field">
-                            <label>Health Screening Budget (RM/year)</label>
-                            <input type="number" id="hs-screening" value="15000"/>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Employee Assistance -->
-                <div class="sec">
-                    <div class="sec-label">EMPLOYEE ASSISTANCE PROGRAMME</div>
-                    <div class="row2">
-                        <div class="field">
-                            <label>EAP Subscription (RM/year)</label>
-                            <input type="number" id="hs-eap" value="8000"/>
-                        </div>
-                        <div class="field">
-                            <label>Mental Health Initiatives (RM/year)</label>
-                            <input type="number" id="hs-mental" value="5000"/>
-                        </div>
-                    </div>
-                    <div class="row2">
-                        <div class="field">
-                            <label>Critical Illness Support (RM/year)</label>
-                            <input type="number" id="hs-critical" value="5000"/>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Growth & Contingency -->
-                <div class="sec">
-                    <div class="sec-label">GROWTH & CONTINGENCY</div>
-                    <div class="row2">
-                        <div class="field">
-                            <label>Annual Growth Rate (%)</label>
-                            <input type="number" id="hs-growth" value="5"/>
-                        </div>
-                        <div class="field">
-                            <label>Contingency Buffer (%)</label>
-                            <input type="number" id="hs-contingency" value="10"/>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Breakdown Cards -->
-                <div class="sec">
-                    <div class="sec-label-2">BUDGET BREAKDOWN</div>
-                    <div class="breakdown-cards">
-                        <div class="bcard">
-                            <div class="bcard-lbl">Workplace Safety</div>
-                            <div class="bcard-val" id="hs-c1">RM 0</div>
-                        </div>
-                        <div class="bcard">
-                            <div class="bcard-lbl">Wellness Programmes</div>
-                            <div class="bcard-val" id="hs-c2">RM 0</div>
-                        </div>
-                        <div class="bcard">
-                            <div class="bcard-lbl">EAP & Mental Health</div>
-                            <div class="bcard-val" id="hs-c3">RM 0</div>
-                        </div>
-                        <div class="bcard">
-                            <div class="bcard-lbl">Contingency</div>
-                            <div class="bcard-val" id="hs-c4">RM 0</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Component Contribution Chart -->
-                <div class="sec">
-                    <div class="sec-label-2">COMPONENT CONTRIBUTION TO HEALTH & WELLBEING BUDGET</div>
-                    <div class="comp-chart" id="hs-comp-chart"></div>
-                </div>
-
-                <!-- 5 Year Projection Chart -->
-                <div class="sec">
-                    <div class="sec-label-2">5-YEAR BUDGET PROJECTION</div>
-                    <div class="proj-bars" id="hs-proj-chart"></div>
-                </div>
-
-                <!-- Total Budget -->
-                <div class="total-result">
-                    <div class="total-lbl"><b>TOTAL HEALTH & WELLBEING BUDGET (Year 1)</b></div>
-                    <div class="total-val" id="hs-total">RM 0</div>
-                </div>
-
 
             </div>
 
@@ -1101,115 +799,19 @@
                     <p class="page-sub">Estimate employment law, compliance audits, court cases and regulatory costs.</p>
                 </div>
 
-                <!-- Legal Counsel & Court Cases -->
-                <div class="sec">
-                    <div class="sec-label">LEGAL COUNSEL & COURT CASES</div>
-                    <div class="row2">
-                        <div class="field">
-                            <label>External Legal Retainer (RM/year)</label>
-                            <input type="number" id="lc-retainer" value="15000"/>
-                        </div>
-                        <div class="field">
-                            <label>External Court Case Fees (RM/year)</label>
-                            <input type="number" id="lc-court" value="20000"/>
-                        </div>
+                <!-- Demo Notice -->
+                <div class="demo-notice">
+                    <div class="demo-notice-icon">🔒</div>
+                    <h3 class="demo-notice-title">Full Version Only</h3>
+                    <p class="demo-notice-text">This page is only available in the Full Version of HR Budget Estimator.</p>
+                    <p class="demo-notice-contact">Contact Mitma Consulting to get access to the Full Version.</p>
+                    <a href="https://mitmaconsulting.framer.ai/contact" target="_blank">
+                        <img src="images/mitma_logo.png" class="demo-notice-logo" alt="Mitma Consulting"/>
+                    </a>
+                    <div class="demo-notice-buttons">
+                        <a href="https://mitmaconsulting.framer.ai/contact" target="_blank" class="demo-notice-btn">Contact Mitma Consulting →</a>
+                        <a href="https://www.linkedin.com/in/mithirendra-maniam/" target="_blank" class="demo-notice-btn-linkedin">Connect on LinkedIn →</a>
                     </div>
-                    <div class="row2">
-                        <div class="field">
-                            <label>Employment Contract Reviews (RM/year)</label>
-                            <input type="number" id="lc-contracts" value="5000"/>
-                        </div>
-                        <div class="field">
-                            <label>Industrial Relations Cases (RM/year)</label>
-                            <input type="number" id="lc-ir" value="10000"/>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Compliance & Audits -->
-                <div class="sec">
-                    <div class="sec-label">COMPLIANCE & AUDITS</div>
-                    <div class="row2">
-                        <div class="field">
-                            <label>HR Compliance Audit (RM/year)</label>
-                            <input type="number" id="lc-audit" value="8000"/>
-                        </div>
-                        <div class="field">
-                            <label>PDPA Compliance Budget (RM/year)</label>
-                            <input type="number" id="lc-pdpa" value="5000"/>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Policy & Compliance Training -->
-                <div class="sec">
-                    <div class="sec-label">POLICY & COMPLIANCE TRAINING</div>
-                    <div class="row2">
-                        <div class="field">
-                            <label>Policy Review & Updates (RM/year)</label>
-                            <input type="number" id="lc-policy" value="5000"/>
-                        </div>
-                        <div class="field">
-                            <label>Compliance Training Budget (RM/year)</label>
-                            <input type="number" id="lc-training" value="8000"/>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Growth & Contingency -->
-                <div class="sec">
-                    <div class="sec-label">GROWTH & CONTINGENCY</div>
-                    <div class="row2">
-                        <div class="field">
-                            <label>Annual Growth Rate (%)</label>
-                            <input type="number" id="lc-growth" value="3"/>
-                        </div>
-                        <div class="field">
-                            <label>Contingency Buffer (%)</label>
-                            <input type="number" id="lc-contingency" value="15"/>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Breakdown Cards -->
-                <div class="sec">
-                    <div class="sec-label-2">BUDGET BREAKDOWN</div>
-                    <div class="breakdown-cards">
-                        <div class="bcard">
-                            <div class="bcard-lbl">Legal & Court Cases</div>
-                            <div class="bcard-val" id="lc-c1">RM 0</div>
-                        </div>
-                        <div class="bcard">
-                            <div class="bcard-lbl">Compliance & Audits</div>
-                            <div class="bcard-val" id="lc-c2">RM 0</div>
-                        </div>
-                        <div class="bcard">
-                            <div class="bcard-lbl">Policy & Training</div>
-                            <div class="bcard-val" id="lc-c3">RM 0</div>
-                        </div>
-                        <div class="bcard">
-                            <div class="bcard-lbl">Contingency</div>
-                            <div class="bcard-val" id="lc-c4">RM 0</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Component Contribution Chart -->
-                <div class="sec">
-                    <div class="sec-label-2">COMPONENT CONTRIBUTION TO LEGAL & COMPLIANCE BUDGET</div>
-                    <div class="comp-chart" id="lc-comp-chart"></div>
-                </div>
-
-                <!-- 5 Year Projection Chart -->
-                <div class="sec">
-                    <div class="sec-label-2">5-YEAR BUDGET PROJECTION</div>
-                    <div class="proj-bars" id="lc-proj-chart"></div>
-                </div>
-
-                <!-- Total Budget -->
-                <div class="total-result">
-                    <div class="total-lbl"><b>TOTAL LEGAL & COMPLIANCE BUDGET (Year 1)</b></div>
-                    <div class="total-val" id="lc-total">RM 0</div>
                 </div>
 
 
@@ -1225,114 +827,21 @@
                     <p class="page-sub">Estimate core HR tech stack, digital tools and special project costs.</p>
                 </div>
 
-                <!-- Core HR Systems -->
-                <div class="sec">
-                    <div class="sec-label">CORE HR SYSTEMS</div>
-                    <div class="row2">
-                        <div class="field">
-                            <label>HRIS Subscription (RM/year)</label>
-                            <input type="number" id="tech-hris" value="24000"/>
-                        </div>
-                        <div class="field">
-                            <label>Payroll Software (RM/year)</label>
-                            <input type="number" id="tech-payroll" value="12000"/>
-                        </div>
+                <!-- Demo Notice -->
+                <div class="demo-notice">
+                    <div class="demo-notice-icon">🔒</div>
+                    <h3 class="demo-notice-title">Full Version Only</h3>
+                    <p class="demo-notice-text">This page is only available in the Full Version of HR Budget Estimator.</p>
+                    <p class="demo-notice-contact">Contact Mitma Consulting to get access to the Full Version.</p>
+                    <a href="https://mitmaconsulting.framer.ai/contact" target="_blank">
+                        <img src="images/mitma_logo.png" class="demo-notice-logo" alt="Mitma Consulting"/>
+                    </a>
+                    <div class="demo-notice-buttons">
+                        <a href="https://mitmaconsulting.framer.ai/contact" target="_blank" class="demo-notice-btn">Contact Mitma Consulting →</a>
+                        <a href="https://www.linkedin.com/in/mithirendra-maniam/" target="_blank" class="demo-notice-btn-linkedin">Connect on LinkedIn →</a>
                     </div>
                 </div>
 
-                <!-- Performance & Analytics -->
-                <div class="sec">
-                    <div class="sec-label">PERFORMANCE & ANALYTICS</div>
-                    <div class="row2">
-                        <div class="field">
-                            <label>Performance Management System (RM/year)</label>
-                            <input type="number" id="tech-pms" value="10000"/>
-                        </div>
-                        <div class="field">
-                            <label>People Analytics Tools (RM/year)</label>
-                            <input type="number" id="tech-analytics" value="8000"/>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Maintenance & Special Projects -->
-                <div class="sec">
-                    <div class="sec-label">MAINTENANCE & SPECIAL PROJECTS</div>
-                    <div class="row3">
-                        <div class="field">
-                            <label>System Maintenance & Upgrades (RM/year)</label>
-                            <input type="number" id="tech-maintenance" value="6000"/>
-                        </div>
-                        <div class="field">
-                            <label>Integration & Implementation (RM/year)</label>
-                            <input type="number" id="tech-integration" value="5000"/>
-                        </div>
-                        <div class="field">
-                            <label>Special / Consultancy Projects (RM/year)</label>
-                            <input type="number" id="tech-consultancy" value="20000"/>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Growth & Contingency -->
-                <div class="sec">
-                    <div class="sec-label">GROWTH & CONTINGENCY</div>
-                    <div class="row2">
-                        <div class="field">
-                            <label>Annual Growth Rate (%)</label>
-                            <input type="number" id="tech-growth" value="8"/>
-                        </div>
-                        <div class="field">
-                            <label>Contingency Buffer (%)</label>
-                            <input type="number" id="tech-contingency" value="10"/>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Breakdown Cards -->
-                <div class="sec">
-                    <div class="sec-label-2">BUDGET BREAKDOWN</div>
-                    <div class="breakdown-cards">
-                        <div class="bcard">
-                            <div class="bcard-lbl">Core HR Systems</div>
-                            <div class="bcard-val" id="tech-c1">RM 0</div>
-                        </div>
-                        <div class="bcard">
-                            <div class="bcard-lbl">Performance & Analytics</div>
-                            <div class="bcard-val" id="tech-c2">RM 0</div>
-                        </div>
-                        <div class="bcard">
-                            <div class="bcard-lbl">Maintenance</div>
-                            <div class="bcard-val" id="tech-c3">RM 0</div>
-                        </div>
-                        <div class="bcard">
-                            <div class="bcard-lbl">Special Projects</div>
-                            <div class="bcard-val" id="tech-c4">RM 0</div>
-                        </div>
-                        <div class="bcard">
-                            <div class="bcard-lbl">Contingency</div>
-                            <div class="bcard-val" id="tech-c5">RM 0</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Component Contribution Chart -->
-                <div class="sec">
-                    <div class="sec-label-2">COMPONENT CONTRIBUTION TO HR TECH BUDGET</div>
-                    <div class="comp-chart" id="tech-comp-chart"></div>
-                </div>
-
-                <!-- 5 Year Projection Chart -->
-                <div class="sec">
-                    <div class="sec-label-2">5-YEAR BUDGET PROJECTION</div>
-                    <div class="proj-bars" id="tech-proj-chart"></div>
-                </div>
-
-                <!-- Total Budget -->
-                <div class="total-result">
-                    <div class="total-lbl"><b>TOTAL HR TECH BUDGET (Year 1)</b></div>
-                    <div class="total-val" id="tech-total">RM 0</div>
-                </div>
             </div>
 
             <!-- DASHBOARD PAGE -->
@@ -1345,46 +854,21 @@
                     <p class="page-sub">Visual overview of total HR budget across all functions.</p>
                 </div>
 
-                <!-- KPI Cards -->
-                <div class="dash-kpis">
-                    <div class="dash-kpi">
-                        <div class="dash-kpi-lbl">Total HR Budget (Year 1)</div>
-                        <div class="dash-kpi-val" id="dash-total-y1">RM 0</div>
-                    </div>
-                    <div class="dash-kpi">
-                        <div class="dash-kpi-lbl">Cost per Employee (Year 1)</div>
-                        <div class="dash-kpi-val" id="dash-cpe-y1">RM 0</div>
-                    </div>
-                    <div class="dash-kpi">
-                        <div class="dash-kpi-lbl">Total Headcount</div>
-                        <div class="dash-kpi-val" id="dash-hc">0</div>
-                    </div>
-                    <div class="dash-kpi">
-                        <div class="dash-kpi-lbl">Number of Functions</div>
-                        <div class="dash-kpi-val">9</div>
+                <!-- Demo Notice -->
+                <div class="demo-notice">
+                    <div class="demo-notice-icon">🔒</div>
+                    <h3 class="demo-notice-title">Full Version Only</h3>
+                    <p class="demo-notice-text">This page is only available in the Full Version of HR Budget Estimator.</p>
+                    <p class="demo-notice-contact">Contact Mitma Consulting to get access to the Full Version.</p>
+                    <a href="https://mitmaconsulting.framer.ai/contact" target="_blank">
+                        <img src="images/mitma_logo.png" class="demo-notice-logo" alt="Mitma Consulting"/>
+                    </a>
+                    <div class="demo-notice-buttons">
+                        <a href="https://mitmaconsulting.framer.ai/contact" target="_blank" class="demo-notice-btn">Contact Mitma Consulting →</a>
+                        <a href="https://www.linkedin.com/in/mithirendra-maniam/" target="_blank" class="demo-notice-btn-linkedin">Connect on LinkedIn →</a>
                     </div>
                 </div>
 
-                <!-- Budget by Function -->
-                <div class="sec">
-                    <div class="sec-label-2">BUDGET BY FUNCTION — YEAR 1</div>
-                    <div class="comp-chart" id="dash-by-function"></div>
-                </div>
-
-                <!-- Budget Split Donut -->
-                <div class="sec">
-                    <div class="sec-label-2">BUDGET SPLIT %</div>
-                    <div class="dash-donut-wrap">
-                        <svg id="dash-donut" width="120" height="120" viewBox="0 0 120 120"></svg>
-                        <div class="dash-legend" id="dash-legend"></div>
-                    </div>
-                </div>
-
-                <!-- Total Budget Projection -->
-                <div class="sec">
-                    <div class="sec-label-2">TOTAL BUDGET PROJECTION — 5 YEARS</div>
-                    <svg id="dash-proj-chart" width="100%" height="160" viewBox="0 0 500 160" xmlns="http://www.w3.org/2000/svg"></svg>
-                </div>
             </div>
 
             <!-- SUMMARY PAGE -->
@@ -1397,64 +881,26 @@
                     <p class="page-sub">Total HR investment projection with headcount and cost per employee.</p>
                 </div>
 
-                <!-- Controls -->
-                <div class="summary-controls">
-                    <label>Projection</label>
-                    <select id="sum-projection">
-                        <option value="1">1 Year</option>
-                        <option value="3">3 Years</option>
-                        <option value="5" selected>5 Years</option>
-                        <option value="10">10 Years</option>
-                    </select>
-                    <label>Growth Rates</label>
-                    <select id="sum-growth-mode">
-                        <option value="individual" selected>Use individual rates</option>
-                        <option value="5">Override all — 5%</option>
-                        <option value="10">Override all — 10%</option>
-                    </select>
-                </div>
-
-                <!-- Summary Table -->
-                <div class="sum-table-wrap">
-                    <table class="sum-table" id="sum-table">
-                        <thead>
-                            <tr id="sum-header-row">
-                                <th>Function</th>
-                            </tr>
-                        </thead>
-                        <tbody id="sum-body">
-                        </tbody>
-                        <tfoot>
-                            <tr class="total-row" id="sum-total-row">
-                                <td>Total Budget</td>
-                            </tr>
-                            <tr class="hc-row" id="sum-hc-row">
-                                <td>Total Headcount</td>
-                            </tr>
-                            <tr class="cpe-row" id="sum-cpe-row">
-                                <td>Cost per Employee</td>
-                            </tr>
-                        </tfoot>
-                    </table>
-                </div>
-
-                <!-- Bottom Cards -->
-                <div class="sum-bottom">
-                    <div class="sum-card">
-                        <div class="sum-card-lbl">Total Investment (Selected Period)</div>
-                        <div class="sum-card-val" id="sum-total-invest">RM 0</div>
-                    </div>
-                    <div class="sum-card warn">
-                        <div class="sum-card-lbl">Industry Benchmark (per employee/year)</div>
-                        <div class="sum-card-val" id="sum-benchmark">RM 18,000 – RM 45,000</div>
-                        <div class="sum-card-note" id="sum-benchmark-note"></div>
+                <!-- Demo Notice -->
+                <div class="demo-notice">
+                    <div class="demo-notice-icon">🔒</div>
+                    <h3 class="demo-notice-title">Full Version Only</h3>
+                    <p class="demo-notice-text">This page is only available in the Full Version of HR Budget Estimator.</p>
+                    <p class="demo-notice-contact">Contact Mitma Consulting to get access to the Full Version.</p>
+                    <a href="https://mitmaconsulting.framer.ai/contact" target="_blank">
+                        <img src="images/mitma_logo.png" class="demo-notice-logo" alt="Mitma Consulting"/>
+                    </a>
+                    <div class="demo-notice-buttons">
+                        <a href="https://mitmaconsulting.framer.ai/contact" target="_blank" class="demo-notice-btn">Contact Mitma Consulting →</a>
+                        <a href="https://www.linkedin.com/in/mithirendra-maniam/" target="_blank" class="demo-notice-btn-linkedin">Connect on LinkedIn →</a>
                     </div>
                 </div>
+                
             </div>
 
             <!-- FOOTER — always visible at bottom of main panel -->
             <footer>
-                <p>&copy; 2026 Mitma Consulting · HR Budget Estimator Version 0 ·
+                <p>&copy; 2026 Mitma Consulting · HR Budget Estimator Demo Version 0 ·
     Built by Mithirendra Maniam</p>
             </footer>
         
